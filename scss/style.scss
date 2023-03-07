@@ -29,14 +29,17 @@ main .row:first-of-type {
 
 // A 'fake' logo
 .logo {
-  font-family: 'Helvetica Neue';
+  font-family: 'Open Sans', sans-serif;
   display: inline-block;
   margin-top: -5px;
 
 }
 
+
 .nav-link {
-  font-family: 'Tilt Neon', cursive;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  font-size: 18px;
 }
 
 // More margin/space between the logo and
