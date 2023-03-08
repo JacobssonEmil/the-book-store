@@ -7,67 +7,101 @@
   <title>BookStore</title>
 </head>
 
-<body>
+<body id="body">
   <!--<component src="/app" />-->
   <!--<main class=""></main>-->
   <component src="/parts/nav"></component>
 
-
-
-  <!-- Background image -->
-  <div class="p-1 text-center bg-image" style="background-image: url('/html/images/bg1.png'); margin-top:50px;">
-    <br>
-    <div class="mask">
-      <div class="d-flex justify-content-center align-items-center h-100">
-        <div class="text-black">
-          <h2 class="mb-3" style="font-style: italic; font-weight: 600">Featured</h2>
-          <p style="font-style: italic;">Coding with JavaScript for dummies</p>
-          <img width="180px" height="100%" src="images/js1.jpg" class="mb-3">
-          <br>
-          <a class="btn btn-md btn-success" href="#!" role="button" style="font-style: italic;">Shop Now</a>
-        </div>
+  <!--CATERGORY-->
+  <div class="category-container container">
+    <h3 style="padding-bottom: 50px;">Browse by Category</h3>
+    <div class="row">
+      <div class="col-xl-3">
+        <button class="catergory-btn btn">UX</button>
+      </div>
+      <div class="col-xl-3">
+        <button class="catergory-btn btn">HTML</button>
+      </div>
+      <div class="col-xl-3">
+        <button class="catergory-btn btn">CSS</button>
+      </div>
+      <div class="col-xl-3">
+        <button class="catergory-btn btn">JavaScript</button>
       </div>
     </div>
-    <br>
   </div>
+  <!--CATERGORY-->
+
   <hr>
-  <!-- Background image -->
-
-
-  <div class="container">
-    <div class="row" style="text-align: center;">
-      <div class="col-xl-4">
-        <img src="images/js2.jpg">
-        <p id="b1" class="book-name">JavaScript The Definitive Guide</p>
-        <p class="price">$29</p>
+  <div class="container-fluid">
+    <!--ROW ONE-->
+    <div class="book-row row" style="text-align: center;">
+      <div class="book-col col-xl-4">
+        <img width="200px" src="images/js2.jpg">
+        <p id="book0" class="book-name">Bookname Lorem ipsum dolor sit amet, consecte</p>
+        <p id="author0" class="book-author">Bookname Lorem ipsum dolor sit amet, consecte</p>
+        <p class="price">$<span id="price0">29</span> &nbsp;<button class="buy-btn btn btn-success">Add to Cart</button>
+        </p>
       </div>
-      <div class="col-xl-4">
-        <img src="images/js2.jpg">
-        <p class="book-name">JavaScript The Definitive Guide</p>
-        <p class="price">$29</p>
+      <div class="book-col col-xl-4">
+        <img width="200px" src="images/js2.jpg">
+        <p id="book1" class="book-name">Bookname Lorem ipsum dolor sit am</p>
+        <p id="author1" class="book-author">Bookname Lorem ipsum dolor sit amet, consecte</p>
+        <p class="price">$<span id="price1">29</span> &nbsp;<button class="buy-btn btn btn-success">Add to Cart</button>
+        </p>
       </div>
-      <div class="col-xl-4">
-        <img src="images/js2.jpg">
-        <p class="book-name">JavaScript The Definitive Guide</p>
-        <p class="price">$29</p>
+      <div class="book-col col-xl-4">
+        <img width="200px" src="images/js2.jpg">
+        <p id="book2" class="book-name">Bookname Lorem ipsum dol</p>
+        <p id="author2" class="book-author">Bookname Lorem ipsum dolor sit amet, consecte</p>
+        <p class="price">$<span id="price2">29</span> &nbsp;<button class="buy-btn btn btn-success">Add to Cart</button>
+        </p>
+
       </div>
     </div>
+
+
+
+    <!--ROW TWO-->
+    <div class="book-row row" style="text-align: center;">
+      <div class="book-col col-xl-4">
+        <img width="200px" src="images/js2.jpg">
+        <p id="book3" class="book-name">Bookname Lorem ipsum dol</p>
+        <p id="author3" class="book-author">Bookname Lorem ipsum dolor sit amet, consecte</p>
+        <p class="price">$<span id="price3">29</span> &nbsp;<button class="buy-btn btn btn-success">Add to Cart</button>
+        </p>
+      </div>
+      <div class="book-col col-xl-4">
+        <img width="200px" src="images/js2.jpg">
+        <p id="book4" class="book-name">Bookname Lorem ipsum dol</p>
+        <p id="author4" class="book-author">Bookname Lorem ipsum dolor sit amet, consecte</p>
+        <p class="price">$<span id="price4">29</span> &nbsp;<button class="buy-btn btn btn-success">Add to Cart</button>
+        </p>
+      </div>
+      <div class="book-col col-xl-4">
+        <img width="200px" src="images/js2.jpg">
+        <p id="book5" class="book-name">Bookname Lorem ipsum dol</p>
+        <p id="author5" class="book-author">Bookname Lorem ipsum dolor sit amet, consecte</p>
+        <p class="price">$<span id="price5">29</span> &nbsp;<button class="buy-btn btn btn-success">Add to Cart</button>
+        </p>
+
+      </div>
+    </div>
+
+
   </div>
 
 
 
 
 
-  <!--<main class=""></main>-->
   <component src="/parts/footer"></component>
-
-
 
 
 
   <!--SCRIPTS-->
   <script type="module" src="/js/main.js"></script>
-  <script src="/js/client.js"></script>
+  <script type="module" src="/js/client.js"></script>
 </body>
 
 </html>
