@@ -8,10 +8,66 @@
 </head>
 
 <body>
-  <component src="/app" />
-  <main class=""></main>
+  <!--<component src="/app" />-->
+  <!--<main class=""></main>-->
+  <component src="/parts/nav"></component>
+
+
+
+  <!-- Background image -->
+  <div class="p-1 text-center bg-image" style="background-image: url('/html/images/bg1.png'); margin-top:50px;">
+    <br>
+    <div class="mask">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-black">
+          <h2 class="mb-3" style="font-style: italic; font-weight: 600">Featured</h2>
+          <p style="font-style: italic;">Coding with JavaScript for dummies</p>
+          <img width="180px" height="100%" src="images/js1.jpg" class="mb-3">
+          <br>
+          <a class="btn btn-md btn-success" href="#!" role="button" style="font-style: italic;">Shop Now</a>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+  <hr>
+  <!-- Background image -->
+
+
+  <div class="container">
+    <div class="row" style="text-align: center;">
+      <div class="col-xl-4">
+        <img src="images/js2.jpg">
+        <p id="b1" class="book-name">JavaScript The Definitive Guide</p>
+        <p class="price">$29</p>
+      </div>
+      <div class="col-xl-4">
+        <img src="images/js2.jpg">
+        <p class="book-name">JavaScript The Definitive Guide</p>
+        <p class="price">$29</p>
+      </div>
+      <div class="col-xl-4">
+        <img src="images/js2.jpg">
+        <p class="book-name">JavaScript The Definitive Guide</p>
+        <p class="price">$29</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!--<main class=""></main>-->
+  <component src="/parts/footer"></component>
+
+
+
+
+
   <!--SCRIPTS-->
   <script type="module" src="/js/main.js"></script>
+  <script src="/js/client.js"></script>
 </body>
 
 </html>
