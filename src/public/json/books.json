@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Responsive design with Bootstrap",
+    "author": "Emil Jacobsson",
+    "description": "Lorem ipsum / or your text",
+    "category": "CSS",
+    "price": 15.99,
+    "image": "/images/b1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "HTML - an introduction",
+    "author": "Kevin Svensson",
+    "description": "Lorem ipsum / or your text TWO",
+    "category": "HTML",
+    "price": 9.99,
+    "image": "/images/b2.jpg"
+  },
+  {
+    "id": 3,
+    "title": "CSS - an introduction",
+    "author": "Franke Svantesson",
+    "description": "Lorem ipsum / or your text TWO",
+    "category": "CSS",
+    "price": 15.99,
+    "image": "/images/b3.jpg"
+  },
+  {
+    "id": 4,
+    "title": "JavaScript - an introduction",
+    "author": "Per Karlsson",
+    "description": "Lorem ipsum / or your text TWO",
+    "category": "JavaScript",
+    "price": 119.99,
+    "image": "/images/b4.jpg"
+  },
+  {
+    "id": 5,
+    "title": "JavaScript The Definitive Guide",
+    "author": "Nabil Bahoui",
+    "description": "Lorem ipsum / or your text TWO",
+    "category": "UX",
+    "price": 15.99,
+    "image": "/images/b5.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Coding with JavaScript for Dummies",
+    "author": "John Larsson",
+    "description": "Lorem ipsum / or your text TWO",
+    "category": "UX",
+    "price": 15.99,
+    "image": "/images/b6.jpg"
+  }
+]

@@ -18,13 +18,18 @@ let persons,
 
 async function start() {
 
-    persons = await getJSON('/json/persons.json');
+    persons = await getJSON('/json/books.json');
 
     displayPersons();
 
 }
 
-
+function viewCart() {
+    var booksInCart = []
+}
+function addToCart(id) {
+    alert("jeje")
+}
 
 function displayPersons() {
 
@@ -44,43 +49,20 @@ function displayPersons() {
 
     let htmlArray = filteredPersons.map(({
 
-        id, firstName, lastName, email, phone, age, hobby
+        id, title, author, description, category, price, image
 
     }) => /*html*/`
-    <hr>
-    <div class="container-fluid">
-      <!--ROW ONE-->
-      <div id="ROWJS" class="book-row row" style="text-align: center;">
-        <div class="book-col col-xl-4">
-          <img width="200px" src="images/js2.jpg">
-          <p id="book0" class="book-name">Bookname Lorem ipsum dolor sit amet, consecte</p>
-          <p id="author0" class="book-author">Bookname Lorem ipsum dolor sit amet, consecte</p>
-          <p class="price">$<span id="price0">29</span> &nbsp;<button class="buy-btn btn btn-success">Add to Cart</button>
-          </p>
-        </div>
-        <div class="book-col col-xl-4">
-          <img width="200px" src="images/js2.jpg">
-          <p id="book1" class="book-name">Bookname Lorem ipsum dolor sit am</p>
-          <p id="author1" class="book-author">Bookname Lorem ipsum dolor sit amet, consecte</p>
-          <p class="price">$<span id="price1">29</span> &nbsp;<button class="buy-btn btn btn-success">Add to Cart</button>
-          </p>
-        </div>
-        <div class="book-col col-xl-4">
-          <img width="200px" src="images/js2.jpg">
-          <p id="book2" class="book-name">Bookname Lorem ipsum dol</p>
-          <p id="author2" class="book-author">Bookname Lorem ipsum dolor sit amet, consecte</p>
-          <p class="price">$<span id="price2">29</span> &nbsp;<button class="buy-btn btn btn-success">Add to Cart</button>
-          </p>
-  
-        </div>
-      </div>
-    
-
+    <div class="col-lg-3 book-row">
+        <img class="book-image" src="${image}">
+        <h5 class="book-title">${title}</h1>
+        <p class="book-author">${author}</p>
+        <p class="book-price">$${price}<button class="book-button btn btn-success">Add to Cart</button></p>
+        
+    </div>
+   
   `);
 
-    document.querySelector('.personList').innerHTML = htmlArray.join('');
-
+    document.querySelector('.book-list').innerHTML = htmlArray.join('');
 }
-
 
 start();

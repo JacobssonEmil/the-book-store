@@ -1,1 +1,29 @@
 @import "~bootstrap/scss/bootstrap";
+
+body {
+    margin-top: 150px;
+}
+
+.book-list {
+    text-align: center;
+
+
+}
+
+.book-image {
+    width: 150px;
+}
+
+.book-row {
+    margin-top: 50px;
+}
+
+.book-title {
+    margin-top: 20px;
+}
+
+.book-price {}
+
+.book-button {
+    margin-left: 10px;
+}
