@@ -2,12 +2,18 @@
 
 body {
     margin-top: 150px;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .book-list {
     text-align: center;
 
 
+}
+
+.cart-list {
+    text-align: center;
 }
 
 .book-image {
@@ -17,6 +23,8 @@ body {
 .book-row {
     margin-top: 50px;
 }
+
+.cart-row {}
 
 .book-title {
     margin-top: 20px;
