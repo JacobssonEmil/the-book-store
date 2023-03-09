@@ -1,16 +1,16 @@
-import { defineConfig } from "vite";
-import liveReload from 'vite-plugin-live-reload';
+const path = require('path')
 
-export default defineConfig({
-  css: {
-    devSourcemap: true
-  },
-  build: {
-    outDir: "./dist",
-    target: "esnext",
-    polyfillDynamicImport: false
-  },
-  plugins: [
-    liveReload('./html/**/*.html', { alwaysReload: true })
-  ]
-});
+
+export default {
+    root: path.resolve(__dirname, 'src'),
+    resolve: {
+        alias: {
+            '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
+        }
+    },
+    server: {
+        port: 8080,
+        hot: true
+    }
+}
+
