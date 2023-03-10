@@ -91,16 +91,19 @@ async function addToCart(evt) {
     const result = await getDataArray();
 
     const title = result[myInt].title;
+    const price = result[myInt].price;
     if (title in itemsInCart) {
         // If the item already exists in the cart, increment its quantity
         itemsInCart[title][1]++;
-
     } else {
         // Otherwise, add a new item to the cart
-        itemsInCart[title] = [result[myInt].price, 1];
+        itemsInCart[title] = [price, 1];
     }
 
     cart.push(myInt);
+
+    totalPrice += price;
+    alert(totalPrice)
 }
 
 
@@ -132,12 +135,13 @@ btn.onclick = async function () {
         <div class="col-lg-3 col-md-4 col-sm-6 book-row">
           <h5 class="book-title">${title}</h5>
           <p class="book-price">$${price}</p>
-          <p class="book-price">${quantity}</p>
-        </div>
+          <p class="book-quantity"><span class="cart-amount-header">Quantity:</span> ${quantity}</p>
+        </div><hr>
     `;
         cartArray.push(htmlString);
 
     }
+    cartArray.push('<p class="book-total-price">Total: $</p>' + totalPrice)
 
     document.getElementById('modal-text').innerHTML = cartArray.join('');
     modal.style.display = "block"

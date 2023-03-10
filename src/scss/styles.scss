@@ -21,7 +21,8 @@ body {
 }
 
 .book-row {
-    margin-top: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .book-category-header {
@@ -32,7 +33,18 @@ body {
 
 .book-title {
     margin-top: 20px;
+    font-weight: 600;
 }
+
+.book-total-price {
+    font-weight: bold;
+}
+
+.cart-amount-header {
+    font-weight: bold;
+}
+
+.book-quantity {}
 
 .book-price {}
 
