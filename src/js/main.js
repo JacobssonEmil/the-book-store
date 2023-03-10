@@ -103,7 +103,7 @@ async function addToCart(evt) {
     cart.push(myInt);
 
     totalPrice += price;
-    alert(totalPrice)
+
 }
 
 
@@ -141,7 +141,7 @@ btn.onclick = async function () {
         cartArray.push(htmlString);
 
     }
-    cartArray.push('<p class="book-total-price">Total: $</p>' + totalPrice)
+    cartArray.push(`<p style="text-align:right"><span style="font-weight: bold">Total: </span>$${totalPrice}</p>`);
 
     document.getElementById('modal-text').innerHTML = cartArray.join('');
     modal.style.display = "block"
