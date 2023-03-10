@@ -59,9 +59,7 @@ function displayPersons() {
     </div>
    
   `);
-
     document.querySelector('.book-list').innerHTML = htmlArray.join('');
-
 
     let elements = []
     for (let i = 1; i <= filteredBooks.length; i++) {
@@ -70,15 +68,6 @@ function displayPersons() {
         elements[i - 1].myParam = elements[i - 1].id;
     }
 }
-
-let cart = []
-async function addToCart(evt) {
-    //alert(evt.currentTarget.myParam)
-    cart.push(parseInt(evt.currentTarget.myParam) - 1)
-    const myInt = parseInt(evt.currentTarget.myParam) - 1;
-
-}
-
 async function getDataArray() {
     const url = '/json/books.json'; // replace with your JSON endpoint URL
 
@@ -93,23 +82,31 @@ async function getDataArray() {
         .catch(error => console.error(error));
 }
 
-let itemsInCart = []
+let cart = []
+let itemsInCart = {}
+let totalPrice = 0;
 
-let viewCart = async event => {
-    try {
-        const result = await getDataArray();
+async function addToCart(evt) {
+    const myInt = parseInt(evt.currentTarget.myParam) - 1;
+    const result = await getDataArray();
 
-        // adds the title and price for every book in cart
-        for (let i = 0; i < cart.length; i++) {
-            // index 0 in the nested array holds the title, index 1 in the nested array hold price
-            itemsInCart[i] = new Array(result[cart[i]].title, result[cart[i]].price)
-        }
+    const title = result[myInt].title;
+    if (title in itemsInCart) {
+        // If the item already exists in the cart, increment its quantity
+        itemsInCart[title][1]++;
 
-    } catch (error) {
-        alert(error);
+    } else {
+        // Otherwise, add a new item to the cart
+        itemsInCart[title] = [result[myInt].price, 1];
     }
 
-};
+    cart.push(myInt);
+}
+
+
+
+
+
 
 
 
@@ -127,18 +124,17 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
 btn.onclick = async function () {
-
-    await viewCart();
     let cartArray = [];
-    for (let i = 0; i < cart.length; i++) {
+    for (let title in itemsInCart) {
+        const price = itemsInCart[title][0];
+        const quantity = itemsInCart[title][1];
         const htmlString = `
-    
-    <div class="col-lg-3 col-md-4 col-sm-6 book-row">
-      <h5 class="book-title">${itemsInCart[i][0]}</h5>
-      <p class="book-price">$${itemsInCart[i][1]}</p>
-    </div>
-    
-  `;
+        <div class="col-lg-3 col-md-4 col-sm-6 book-row">
+          <h5 class="book-title">${title}</h5>
+          <p class="book-price">$${price}</p>
+          <p class="book-price">${quantity}</p>
+        </div>
+    `;
         cartArray.push(htmlString);
 
     }
