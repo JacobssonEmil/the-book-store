@@ -53,6 +53,7 @@ function displayPersons() {
         <img class="book-image" src="${image}">
         <h5 class="book-title">${title}</h1>
         <p class="book-author">${author}</p>
+        <p class="book-category"><span class="book-category-header">Category: </span>${category}</p>
         <p class="book-price">$${price}<button id="${id}" class="book-button btn btn-success">Add to Cart</button></p>
         
     </div>
@@ -78,7 +79,7 @@ async function addToCart(evt) {
 
 }
 
-function getDataArray() {
+async function getDataArray() {
     const url = '/json/books.json'; // replace with your JSON endpoint URL
 
     return fetch(url)
@@ -87,24 +88,14 @@ function getDataArray() {
             // data is the JSON object returned from the API
             const dataArray = [];
             dataArray.push(...data); // add the data to the dataArray
-            return dataArray
+            return dataArray;
         })
         .catch(error => console.error(error));
 }
 
 let itemsInCart = []
 
-let isActive = false;
 let viewCart = async event => {
-    if (isActive == true) {
-        alert("CLOSE")
-        hideCart()
-        isActive = false;
-    }
-    else {
-        isActive = true;
-    }
-
     try {
         const result = await getDataArray();
 
@@ -114,18 +105,30 @@ let viewCart = async event => {
             itemsInCart[i] = new Array(result[cart[i]].title, result[cart[i]].price)
         }
 
-        displayCart()
-
     } catch (error) {
         alert(error);
     }
+
 };
 
-function hideCart() {
 
-}
 
-function displayCart() {
+//document.getElementById('viewCartButton').addEventListener("click", viewCart)
+
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("viewCartButton");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = async function () {
+
+    await viewCart();
     let cartArray = [];
     for (let i = 0; i < cart.length; i++) {
         const htmlString = `
@@ -140,10 +143,21 @@ function displayCart() {
 
     }
 
-    document.querySelector('.cart-list').innerHTML = cartArray.join('');
+    document.getElementById('modal-text').innerHTML = cartArray.join('');
+    modal.style.display = "block"
+
+};
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none";
 }
 
-
-document.getElementById('viewCartButton').addEventListener("click", viewCart)
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
 start();
