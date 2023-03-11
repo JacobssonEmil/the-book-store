@@ -51,7 +51,7 @@ function displayPersons() {
     
     <div class="col-lg-3 col-md-4 col-sm-6 book-row">
         <img class="book-image" src="${image}">
-        <h5 class="book-title">${title}</h1>
+        <h5 class="book-title">${title}</h5>
         <p class="book-author">${author}</p>
         <p class="book-category"><span class="book-category-header">Category: </span>${category}</p>
         <p class="book-price">$${price}<button id="${id}" class="book-button btn btn-success">Add to Cart</button></p>
@@ -107,12 +107,6 @@ async function addToCart(evt) {
 }
 
 
-
-
-
-
-
-
 //document.getElementById('viewCartButton').addEventListener("click", viewCart)
 
 
@@ -131,10 +125,12 @@ btn.onclick = async function () {
     for (let title in itemsInCart) {
         const price = itemsInCart[title][0];
         const quantity = itemsInCart[title][1];
+        const rowSum = price * quantity;
         const htmlString = `
         <div class="col-lg-3 col-md-4 col-sm-6 book-row">
           <h5 class="book-title">${title}</h5>
-          <p class="book-price">$${price}</p>
+          <p class="book-price">Price: $${price}</p>
+          <p class="book-row-sum">Subtotal: $${rowSum}</p>
           <p class="book-quantity"><span class="cart-amount-header">Quantity:</span> ${quantity}</p>
         </div><hr>
     `;

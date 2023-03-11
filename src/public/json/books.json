@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "Responsive design with Bootstrap",
+    "title": "Responsive Design with Bootstrap",
     "author": "Emil Jacobsson",
     "description": "Lorem ipsum / or your text",
     "category": "CSS",
@@ -10,16 +10,16 @@
   },
   {
     "id": 2,
-    "title": "HTML - an introduction",
-    "author": "Kevin Svensson",
-    "description": "Lorem ipsum / or your text TWO",
+    "title": "HTML - an Introduction",
+    "author": "",
+    "description": "Lorem ipsum / or your text",
     "category": "HTML",
-    "price": 9.99,
+    "price": 15.99,
     "image": "/images/b2.jpg"
   },
   {
     "id": 3,
-    "title": "CSS - an introduction",
+    "title": "CSS - an Introduction",
     "author": "Franke Svantesson",
     "description": "Lorem ipsum / or your text TWO",
     "category": "CSS",
@@ -28,7 +28,7 @@
   },
   {
     "id": 4,
-    "title": "JavaScript - an introduction",
+    "title": "JavaScript - an Introduction",
     "author": "Per Karlsson",
     "description": "Lorem ipsum / or your text TWO",
     "category": "JavaScript",
@@ -37,20 +37,146 @@
   },
   {
     "id": 5,
-    "title": "JavaScript The Definitive Guide",
-    "author": "Nabil Bahoui",
+    "title": "The Complete Reference Guide HTML",
+    "author": "Anita Eriksson",
     "description": "Lorem ipsum / or your text TWO",
-    "category": "UX",
-    "price": 15.99,
+    "category": "HTML",
+    "price": 119.99,
     "image": "/images/b5.jpg"
   },
   {
     "id": 6,
-    "title": "Coding with JavaScript for Dummies",
-    "author": "John Larsson",
+    "title": "Learn HTML5",
+    "author": "Alexander Eriksson",
+    "description": "Lorem ipsum / or your text TWO",
+    "category": "HTML",
+    "price": 119.99,
+    "image": "/images/b6.jpg"
+  },
+  {
+    "id": 7,
+    "title": "The Complete Reference Guide UX",
+    "author": "Kevin Nilsson",
     "description": "Lorem ipsum / or your text TWO",
     "category": "UX",
-    "price": 15.99,
-    "image": "/images/b6.jpg"
+    "price": 119.99,
+    "image": "/images/b7.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Learn UX Design",
+    "author": "Nabil Bahoui",
+    "description": "Lorem ipsum / or your text TWO",
+    "category": "UX",
+    "price": 119.99,
+    "image": "/images/b8.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Learn CSS Design",
+    "author": "Oscar Svensson",
+    "description": "Lorem ipsum / or your text TWO",
+    "category": "CSS",
+    "price": 119.99,
+    "image": "/images/b9.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Learn JavaScript Design Patterns",
+    "author": "Anton Larsson",
+    "description": "Lorem ipsum / or your text TWO",
+    "category": "JavaScript",
+    "price": 119.99,
+    "image": "/images/b10.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Learn HTML Design Patterns",
+    "author": "Kevin Persson",
+    "description": "Lorem ipsum / or your text TWO",
+    "category": "HTML",
+    "price": 119.99,
+    "image": "/images/b11.jpg"
+  },
+  {
+    "id": 12,
+    "title": "UX Manual",
+    "author": "Kevin Fransson",
+    "description": "Lorem ipsum / or your text TWO",
+    "category": "UX",
+    "price": 119.99,
+    "image": "/images/b12.jpg"
+  },
+  {
+    "id": 13,
+    "title": "Complete CSS Manual",
+    "author": "Anton Eskilsson",
+    "description": "Lorem ipsum / or your text TWO",
+    "category": "CSS",
+    "price": 119.99,
+    "image": "/images/b13.jpg"
+  },
+  {
+    "id": 14,
+    "title": "UX Good Practice",
+    "author": "Eskil Nilsson",
+    "description": "Lorem ipsum / or your text TWO",
+    "category": "UX",
+    "price": 119.99,
+    "image": "/images/b14.jpg"
+  },
+  {
+    "id": 15,
+    "title": "Good HTML5 Design Practice",
+    "author": "Elliot Smith",
+    "description": "Lorem ipsum / or your text TWO",
+    "category": "HTML",
+    "price": 119.99,
+    "image": "/images/b15.jpg"
+  },
+  {
+    "id": 16,
+    "title": "Write Optimized JavaScript",
+    "author": "Clara Svensson",
+    "description": "Lorem ipsum / or your text TWO",
+    "category": "JavaScript",
+    "price": 119.99,
+    "image": "/images/b16.jpg"
+  },
+  {
+    "id": 17,
+    "title": "NodeJS JavaScript",
+    "author": "Arvid Mattsson",
+    "description": "Lorem ipsum / or your text TWO",
+    "category": "JavaScript",
+    "price": 119.99,
+    "image": "/images/b17.jpg"
+  },
+  {
+    "id": 18,
+    "title": "Modern UX",
+    "author": "Kalle Antonsson",
+    "description": "Lorem ipsum / or your text TWO",
+    "category": "UX",
+    "price": 119.99,
+    "image": "/images/b18.jpg"
+  },
+  {
+    "id": 19,
+    "title": "Modern CSS Design",
+    "author": "Theo Fransson",
+    "description": "Lorem ipsum / or your text TWO",
+    "category": "CSS",
+    "price": 119.99,
+    "image": "/images/b19.jpg"
+  },
+  {
+    "id": 20,
+    "title": "JavaScript From Start",
+    "author": "Theo Hernandez",
+    "description": "Lorem ipsum / or your text TWO",
+    "category": "JavaScript",
+    "price": 119.99,
+    "image": "/images/b20.jpg"
   }
 ]
