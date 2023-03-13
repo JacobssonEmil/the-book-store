@@ -17,57 +17,87 @@ let persons,
 
 
 async function start() {
-
     persons = await getJSON('/json/books.json');
-
-
     displayPersons();
+}
 
+async function displayInformation(id) {
+    const result = await getDataArray();
+    id--;
+
+    const title = result[id].title;
+    const price = result[id].price;
+    const description = result[id].description;
+    const category = result[id].category;
+    const image = result[id].image
+    const author = result[id].author
+    let htmlArray = `<button id="backBtn" class="btn btn-danger" style="width: 200px; height: 100%">Home</button>
+        <div class="book-row">
+            <img class="book-image" src="${image}">
+            <h5 class="book-title">${title}</h5>
+            <p class="book-author">${author}</p>
+            <p class="book-category"><span class="book-category-header">Category: </span>${category}</p>
+            <p class="book-description">${description}</p>
+            <p class="book-price">$${price}<button id="${id}" class="book-button btn btn-success">Add to Cart</button></p>
+        </div>`
+    document.querySelector('.book-list').innerHTML = htmlArray;
+    btn = document.getElementById(`${id}`);
+    btn.addEventListener("click", addToCart);
+    btn.myParam = btn.id;
+    btn.myParam++;
+
+    backBtn = document.getElementById("backBtn")
+    backBtn.addEventListener("click", displayPersons);
 
 }
 
 
 function displayPersons() {
-
     // filter according to hobby and call displayPersons
-
     let filteredBooks = persons.filter(
-
         ({ hobby }) => chosenHobbyFilter === 'all'
-
             || chosenHobbyFilter === hobby
-
     );
 
     if (chosenSortOption === 'Last name') { sortByLastName(filteredBooks); }
-
     if (chosenSortOption === 'Age') { sortByAge(filteredBooks); }
 
     let htmlArray = filteredBooks.map(({
-
         id, title, author, description, category, price, image
-
     }) => /*html*/`
-    
-    <div class="col-lg-3 col-md-4 col-sm-6 book-row">
-        <img class="book-image" src="${image}">
-        <h5 class="book-title">${title}</h5>
-        <p class="book-author">${author}</p>
-        <p class="book-category"><span class="book-category-header">Category: </span>${category}</p>
-        <p class="book-price">$${price}<button id="${id}" class="book-button btn btn-success">Add to Cart</button></p>
-        
-    </div>
-   
-  `);
+        <div class="col-lg-3 col-md-4 col-sm-6 book-row">
+            <img class="book-image" src="${image}">
+            <h5 class="book-title">${title}</h5>
+            <p class="book-author">${author}</p>
+            <p class="book-category"><span class="book-category-header">Category: </span>${category}</p>
+            <p class="book-price">$${price}<button id="${id}" class="book-button btn btn-success">Add to Cart</button></p>
+        </div>
+    `);
+
     document.querySelector('.book-list').innerHTML = htmlArray.join('');
 
-    let elements = []
-    for (let i = 1; i <= filteredBooks.length; i++) {
-        elements.push(document.getElementById(i.toString()))
-        elements[i - 1].addEventListener("click", addToCart);
-        elements[i - 1].myParam = elements[i - 1].id;
-    }
+
+    // add event listener to each book title
+    // add event listener to each book title
+    let bookRows = document.querySelectorAll('.book-row');
+    bookRows.forEach((row) => {
+        let title = row.querySelector('.book-title');
+        title.addEventListener('click', () => {
+            // get the id of the book
+            const id = row.querySelector('.book-button').id;
+            displayInformation(id)
+        });
+    });
+
+    // add event listener to each "Add to Cart" button
+    let elements = document.querySelectorAll('.book-button');
+    elements.forEach((element) => {
+        element.addEventListener("click", addToCart);
+        element.myParam = element.id;
+    });
 }
+
+
 async function getDataArray() {
     const url = '/json/books.json'; // replace with your JSON endpoint URL
 
